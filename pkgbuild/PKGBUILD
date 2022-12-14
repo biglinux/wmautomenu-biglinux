@@ -1,15 +1,15 @@
 # Maintainer: Barnabé di Kartola <barnabedikartola@gmail.com>
 
-pkgname=biglinux-skel-base
+pkgname=wmautomenu-biglinux
 pkgver=$(date +%y.%m.%d)
 pkgrel=$(date +%H%M)
-pkgdesc="Skel for BigLinux Community Base"
+pkgdesc="automatically create menus for window maker, from applications in /usr/share/applications."
 arch=('any')
 url="https://github.com/biglinux/$pkgname"
 license=('GPL3')
-# depends=('')
+depends=('xdgmenumaker')
 provides=("$pkgname")
-conflicts=('big-skel')
+# conflicts=('')
 source=("git+${url}.git")
 md5sums=('SKIP')
 if [ -e "${pkgname}.install" ];then
