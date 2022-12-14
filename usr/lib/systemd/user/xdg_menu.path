@@ -3,6 +3,7 @@ Description=Monitora arquivos modificados na pasta especificada
 ​
 [Path]
 PathChanged=/usr/share/applications/
+PathChanged=/var/lib/flatpak/exports/share/applications/
 ​
 [Install]
 WantedBy=multi-user.target
