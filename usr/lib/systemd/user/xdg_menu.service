@@ -1,0 +1,6 @@
+[Unit]
+Description=Atualiza xdg_menu
+​
+[Service]
+Type=simple
+ExecStart=/usr/bin/xdg_menu

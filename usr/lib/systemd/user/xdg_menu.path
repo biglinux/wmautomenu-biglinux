@@ -1,0 +1,8 @@
+[Unit]
+Description=Monitora arquivos modificados na pasta especificada
+​
+[Path]
+PathChanged=/usr/share/applications/
+​
+[Install]
+WantedBy=multi-user.target
