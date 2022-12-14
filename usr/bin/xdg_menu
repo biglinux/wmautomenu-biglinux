@@ -1,5 +1,6 @@
 #!/bin/bash
 if [ -z "$(cat /lib/systemd/user/xdg_menu.path | grep local)" ];then
+    sleep 10
     PathChanged=$(echo PathChanged=$HOME/.local/share/applications/ | sed 's|/|\\/|g')
     pkexec sed -i "/flatpak/{p;s/.*/$PathChanged/;}" /lib/systemd/user/xdg_menu.path
     systemctl --user daemon-reload
