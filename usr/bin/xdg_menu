@@ -1,2 +1,9 @@
 #!/bin/bash
+if [ -z "$(cat /lib/systemd/user/xdg_menu.path | grep local)" ];then
+    PathChanged=$(echo PathChanged=$HOME/.local/share/applications/ | sed 's|/|\\/|g')
+    pkexec sed -i "/share/{p;s/.*/$PathChanged/;}" /lib/systemd/user/xdg_menu.path
+    systemctl --user daemon-reload
+    systemctl restart --user xdg_menu.path
+fi
+
 xdgmenumaker -f windowmaker | tee $HOME/GNUstep/Defaults/xdg_menu
